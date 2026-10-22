@@ -1,153 +1,173 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./MainFooter.css";
 
-function MainFooter() {
-  const currentYear = new Date().getFullYear();
-
+function MainFooter () {
   return (
-    <footer className="main-footer pt-5 text-white">
-      <div className="container py-4">
-        <div className="row g-4 pb-4 border-bottom border-secondary border-opacity-25">
-          {/* Column 1: Brand Info & Mission */}
-          <div className="col-lg-4 col-md-6">
-            <div className="mb-3">
-              <Link to="/" className="text-decoration-none d-inline-block">
-                <span className="fs-2 fw-bold text-gold tracking-wide">
-                  GGI
-                </span>
-              </Link>
+    <footer className="nexgeda-footer bg-white text-dark pt-5 border-top">
+      <div className="container pb-4">
+        <div className="row g-4">
+          {/* Brand Column */}
+          <div className="col-12 col-lg-4 mb-3 mb-lg-0">
+            <div className="d-flex align-items-center gap-2 mb-3">
+              <div
+                className="logo-icon bg-primary text-white d-flex align-items-center justify-content-center rounded fw-bold"
+                style={{ width: "36px", height: "36px" }}
+              >
+                <i className="bi bi-lightning-charge"></i>
+              </div>
+              <div>
+                <h2 className="h5 text-dark fw-bold mb-0 lh-1">NexGeda</h2>
+                <small
+                  className="text-muted tracking-wide"
+                  style={{ fontSize: "0.75rem" }}
+                >
+                  Technology Store
+                </small>
+              </div>
             </div>
-            <p className="footer-desc text-light opacity-80 mb-4 fs-6">
-              Goal Gate Institution is a member-owned, youth-led cooperative
-              dedicated to digital contribution tracking, financial
-              transparency, and collective wealth creation.
+            <p className="text-secondary small mb-4">
+              Your ultimate destination for cutting-edge technology, premium
+              audio gear, and smart devices that elevate your digital lifestyle.
             </p>
-            <div className="d-flex align-items-center gap-3">
-              <a href="#" className="social-icon-link" aria-label="Tiktok">
-                <i className="bi bi-tiktok"></i>
+            <div className="input-group bg-light rounded border border-light-subtle overflow-hidden">
+              <input
+                type="email"
+                className="form-control bg-transparent border-0 text-dark shadow-none small"
+                placeholder="Enter your email"
+              />
+              <button
+                className="btn bg-orange text-white fw-semibold px-3 small"
+                type="button"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="col-6 col-md-4 col-lg-2">
+            <h5 className="text-dark fs-6 fw-semibold mb-3">Quick Links</h5>
+            <ul className="list-unstyled mb-0">
+              <li className="mb-2">
+                <a
+                  href="#home"
+                  className="text-secondary text-decoration-none small"
+                >
+                  Home
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  href="#shop"
+                  className="text-secondary text-decoration-none small"
+                >
+                  Shop
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  href="#categories"
+                  className="text-secondary text-decoration-none small"
+                >
+                  Categories
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  href="#deals"
+                  className="text-secondary text-decoration-none small"
+                >
+                  Deals
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Customer Support */}
+          <div className="col-6 col-md-4 col-lg-2">
+            <h5 className="text-dark fs-6 fw-semibold mb-3">Customer Care</h5>
+            <ul className="list-unstyled mb-0">
+              <li className="mb-2">
+                <a
+                  href="#about"
+                  className="text-secondary text-decoration-none small"
+                >
+                  About Us
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  href="#contact"
+                  className="text-secondary text-decoration-none small"
+                >
+                  Contact Us
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  href="#shipping"
+                  className="text-secondary text-decoration-none small"
+                >
+                  Shipping & Returns
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  href="#faq"
+                  className="text-secondary text-decoration-none small"
+                >
+                  FAQs
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="col-12 col-md-4 col-lg-4">
+            <h5 className="text-dark fs-6 fw-semibold mb-3">Connect With Us</h5>
+            <p className="text-secondary small mb-2">
+              Shegger, Oromia, Ethiopia
+            </p>
+            <p className="text-secondary small mb-2">support@nexgeda.com</p>
+            <p className="text-secondary small mb-3">+251 900 000 000</p>
+            <div className="d-flex gap-2">
+              <a
+                href="#facebook"
+                className="social-icon bg-light text-dark rounded-circle d-flex align-items-center justify-content-center text-decoration-none border"
+                style={{ width: "32px", height: "32px" }}
+              >
+                <i className="bi bi-facebook"></i>
               </a>
-              <a href="#" className="social-icon-link" aria-label="Telegram">
+              <a
+                href="#instagram"
+                className="social-icon bg-light text-dark rounded-circle d-flex align-items-center justify-content-center text-decoration-none border"
+                style={{ width: "32px", height: "32px" }}
+              >
+                <i className="bi bi-instagram"></i>
+              </a>
+              <a
+                href="#telegram"
+                className="social-icon bg-light text-dark rounded-circle d-flex align-items-center justify-content-center text-decoration-none border"
+                style={{ width: "32px", height: "32px" }}
+              >
                 <i className="bi bi-telegram"></i>
               </a>
-              <a href="#" className="social-icon-link" aria-label="LinkedIn">
-                <i className="bi bi-linkedin"></i>
-              </a>
-              <a href="#" className="social-icon-link" aria-label="Email">
-                <i className="bi bi-envelope-fill"></i>
-              </a>
             </div>
-          </div>
-
-          {/* Column 2: Quick Links */}
-          <div className="col-lg-2 col-md-6">
-            <h5 className="fw-bold text-gold mb-3 text-uppercase fs-6 tracking-wide">
-              Quick Links
-            </h5>
-            <ul className="list-unstyled footer-links mb-0 d-flex flex-column gap-2">
-              <li>
-                <Link to="/" className="footer-link">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/About" className="footer-link">
-                  About GGI
-                </Link>
-              </li>
-              <li>
-                <Link to="/Programs" className="footer-link">
-                  Programs
-                </Link>
-              </li>
-              <li>
-                <Link to="/NewsAndAnnouncements" className="footer-link">
-                  News & Audits
-                </Link>
-              </li>
-              <li>
-                <Link to="/Gallery" className="footer-link">
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link to="/Contact" className="footer-link">
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Member & Admin Gateway */}
-          <div className="col-lg-3 col-md-6">
-            <h5 className="fw-bold text-gold mb-3 text-uppercase fs-6 tracking-wide">
-              Portals & Governance
-            </h5>
-            <ul className="list-unstyled footer-links mb-3 d-flex flex-column gap-2">
-              <li>
-                <Link
-                  to="/login"
-                  className="footer-link d-inline-flex align-items-center"
-                >
-                  <i className="bi bi-box-arrow-in-right text-emerald me-2"></i>
-                  Member Sign In
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/login"
-                  className="footer-link d-inline-flex align-items-center"
-                >
-                  <i className="bi bi-shield-lock-fill text-gold me-2"></i>
-                  Admin Console
-                </Link>
-              </li>
-            </ul>
-            <div className="p-3 rounded-3 bg-emerald-subtle border border-success border-opacity-25">
-              <p className="mb-0 fs-7 text-light opacity-90">
-                <i className="bi bi-info-circle-fill text-gold me-2"></i>
-                Monthly audit contribution window: First 5 days of each month.
-              </p>
-            </div>
-          </div>
-
-          {/* Column 4: Institution Details */}
-          <div className="col-lg-3 col-md-6">
-            <h5 className="fw-bold text-gold mb-3 text-uppercase fs-6 tracking-wide">
-              Institution Info
-            </h5>
-            <ul className="list-unstyled footer-contact mb-0 d-flex flex-column gap-3 text-light opacity-85">
-              <li className="d-flex gap-3">
-                <i className="bi bi-geo-alt-fill text-emerald fs-5"></i>
-                <span>Shegger, Ethiopia</span>
-              </li>
-              <li className="d-flex gap-3">
-                <i className="bi bi-calendar3 text-emerald fs-5"></i>
-                <span>Founded in 2024 by 25 High School Graduates</span>
-              </li>
-              <li className="d-flex gap-3">
-                <i className="bi bi-diagram-3-fill text-emerald fs-5"></i>
-                <span>Elected Board Chairman & Executive Committee</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Bar: Copyright & Terms */}
-        <div className="pt-4 d-flex flex-wrap align-items-center justify-content-between gap-3 text-light opacity-75 fs-7">
-          <p className="mb-0">
-            &copy; {currentYear} <strong>Goal Gate Institution (GGI)</strong>.
-            All rights reserved.
-          </p>
-          <div className="d-flex align-items-center gap-4">
-            <span className="footer-legal-text">Privacy Policy</span>
-            <span className="footer-legal-text">Terms of Service</span>
-            <span className="footer-legal-text">Audit Guidelines</span>
           </div>
         </div>
       </div>
+
+      {/* Bottom Bar */}
+      <div className="border-top py-3 text-center bg-light">
+        <p className="text-muted small mb-0">
+          &copy; {new Date().getFullYear()} NexGeda Technology Store. All rights
+          reserved.
+        </p>
+      </div>
     </footer>
   );
-}
+};
 
 export default MainFooter;
+
+

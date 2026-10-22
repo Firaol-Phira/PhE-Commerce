@@ -55,7 +55,7 @@ function MainHeader({ cartCount = 0 }) {
               <i className="bi bi-lightning-charge"></i>
             </span>
             <span className="d-flex flex-column">
-              <span className="mh-name">TechNova</span>
+              <span className="mh-name">NexGeda</span>
               <span className="mh-tagline d-none d-sm-block">
                 Technology Store
               </span>
@@ -76,7 +76,7 @@ function MainHeader({ cartCount = 0 }) {
             </Link>
             <button
               type="button"
-              className="mh-icon-btn d-lg-none"
+              className="mh-icon-btn d-g-none"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               aria-controls="mh-menu"
