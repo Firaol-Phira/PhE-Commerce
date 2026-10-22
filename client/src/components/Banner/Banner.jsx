@@ -4,6 +4,20 @@ import "./Banner.css";
 
 const slides = [
   {
+    id: "phones",
+    variant: 1,
+    badge: "Phone sale: save up to $200",
+    title: "The new NexGeda phone is here. Trade in and save.",
+    text: "Pro camera, all-day battery and 5G speed. Trade in your old phone and get up to $200 off today.",
+    cta: { label: "Shop phones", to: "/category/phones" },
+    ghost: { label: "Trade-in offers", to: "/deals" },
+    icon: "📱",
+    chips: [
+      { value: "5G", label: "ultra fast" },
+      { value: "50 MP", label: "pro camera" },
+    ],
+  },
+  {
     id: "laptops",
     variant: 0,
     badge: "Up to 30% off",
@@ -31,20 +45,7 @@ const slides = [
       { value: "ANC", label: "noise cancelling" },
     ],
   },
-  {
-    id: "smart-home",
-    variant: 2,
-    badge: "Bundle and save",
-    title: "Build your smart home, room by room",
-    text: "Speakers, lights and cameras that work together. Set up in minutes from your phone.",
-    cta: { label: "Shop smart home", to: "/category/smart-home" },
-    ghost: { label: "View bundles", to: "/deals" },
-    icon: "🏠",
-    chips: [
-      { value: "2 min", label: "setup" },
-      { value: "100+", label: "compatible devices" },
-    ],
-  },
+  
 ];
 
 export default function Banner() {
