@@ -1,85 +1,184 @@
-/* Main Header Custom Enhancements over Bootstrap 5 */
-
 .main-header {
-  transition: all 0.3s ease-in-out;
-  background-color: #F8F9FA;
-  border-bottom: 1px solid rgba(15, 44, 89, 0.08);
+  --mh-primary: #1d4ed8;
+  --mh-primary-hover: #1e40af;
+  --mh-bg: #f8fafc;
+  --mh-surface: #ffffff;
+  --mh-heading: #111827;
+  --mh-body: #475569;
+  --mh-muted: #64748b;
+  --mh-border: #e2e8f0;
+  --mh-orange: #ea580c;
+  --mh-info-bg: #eff6ff;
+
+  background: var(--mh-surface);
+  border-bottom: 1px solid var(--mh-border);
+  z-index: 1030;
 }
 
-.main-header .navbar-brand {
-  letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #0F2C59, #0F2C59);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* ---------- Brand ---------- */
+.mh-logo {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--mh-primary);
+  color: #fff;
+  font-size: 1.6rem;
+  transition: background 0.2s ease, transform 0.25s ease;
+}
+.mh-brand:hover .mh-logo {
+  background: var(--mh-primary-hover);
+  transform: rotate(-6deg) scale(1.05);
+}
+.mh-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--mh-heading);
+}
+.mh-tagline {
+  font-size: 0.9rem;
+  color: var(--mh-muted);
 }
 
-.main-header .nav-link {
-  transition: all 0.2s ease-in-out;
-  color: #0F2C59;
-}
-
-/* Hover state for navigation links */
-.main-header .nav-link:hover {
-  color: #0F2C59 !important;
-  background-color: rgba(0, 168, 107, 0.12); /* Soft Emerald Green tint */
-  transform: translateY(-1px);
-}
-
-/* Active navigation link styling */
-
-
-/* .main-header .nav-link.active.textlink {
-  background-color: #00A86B !important; 
-  color: #F8F9FA !important;            
-} */
-
-.navbar-brand {
-  color: #0F2C59;
-}
-
-/* --- Member Portal Button (btnm) --- */
-.btnm {
-  display: inline-block;
+/* ---------- Icons ---------- */
+.mh-icon-btn {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--mh-heading);
+  font-size: 1.5rem;
   text-decoration: none;
-  padding: 8px 20px;
-  color: #F8F9FA !important;
-  background-color: #0F2C59; /* Button & Icon: Metallic Gold */
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.mh-icon-btn:hover {
+  background: var(--mh-info-bg);
+  color: var(--mh-primary);
+}
+.mh-badge {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--mh-orange);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  animation: mh-pop 0.3s ease;
+}
+
+.mh-divider {
+  border: 0;
+  border-top: 1px solid var(--mh-border);
+  opacity: 1;
+}
+
+/* ---------- Links ---------- */
+.mh-link {
+  position: relative;
+  display: block;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.05rem;
+  color: var(--mh-heading);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.mh-link::after {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--mh-primary);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+.mh-link:hover {
+  color: var(--mh-primary);
+}
+.mh-link:hover::after,
+.mh-link.is-active::after {
+  transform: scaleX(1);
+}
+.mh-link.is-active {
+  color: var(--mh-primary);
   font-weight: 600;
-  border: 1px solid #0F2C59;
-  transition: all 0.25s ease-in-out;
 }
 
-.btnm:hover {
-  border: 1px solid #D4AF37;
-  color: #0F2C59 !important;
-  background-color: #D4AF37; /* Main BG: Deep Navy */
+/* ---------- Search ---------- */
+.mh-search {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.4rem 0.35rem 1rem;
+  background: var(--mh-bg);
+  border: 1px solid var(--mh-border);
+  border-radius: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.mh-search:focus-within {
+  background: var(--mh-surface);
+  border-color: var(--mh-primary);
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.15);
+}
+.mh-search-icon {
+  color: var(--mh-muted);
+  font-size: 1.05rem;
+}
+.mh-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--mh-heading);
+  font-size: 1rem;
+  padding: 0.4rem 0;
+}
+.mh-search input::placeholder {
+  color: var(--mh-muted);
+}
+.mh-search-btn {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--mh-body);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.mh-search-btn:hover {
+  background: var(--mh-primary);
+  color: #fff;
+  transform: translateX(2px);
 }
 
-/* --- Mobile Menu Toggle Button (Removes outline/border, adds BG change) --- */
-
-.custom-toggler,
-.custom-toggler:focus,
-.custom-toggler:active,
-.custom-toggler:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
-  color: #0F2C59 !important;
-  background-color: transparent;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: background-color 0.25s ease, color 0.25s ease;
+.main-header a:focus-visible,
+.main-header button:focus-visible {
+  outline: 3px solid var(--mh-primary);
+  outline-offset: 2px;
 }
 
-/* Background hover state for mobile menu icon */
-.custom-toggler:hover {
-  background-color: rgba(0, 168, 107, 0.15) !important;
-  color: #00A86B !important;
-}
-
-/* Active / Open state: Background change instead of border */
-.custom-toggler.is-open,
-.custom-toggler:active {
-  background-color: #00A86B !important; /* Emerald Green fill */
-  color: #F8F9FA !important;            /* White icon */
+@keyframes mh-pop {
+  from { transform: scale(0.4); }
+  to   { transform: scale(1); }
 }
