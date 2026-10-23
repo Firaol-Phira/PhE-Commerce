@@ -56,7 +56,7 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 .sc-track::-webkit-scrollbar {
   display: none;
