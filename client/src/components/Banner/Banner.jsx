@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Banner.css";
-
+import img1 from "../../assets/img1.png";
 const slides = [
   {
     id: "phones",
@@ -11,7 +11,7 @@ const slides = [
     text: "Pro camera, all-day battery and 5G speed. Trade in your old phone and get up to $200 off today.",
     cta: { label: "Shop phones", to: "/category/phones" },
     ghost: { label: "Trade-in offers", to: "/deals" },
-    icon: "📱",
+    url:img1,
     chips: [
       { value: "5G", label: "ultra fast" },
       { value: "50 MP", label: "pro camera" },
@@ -109,7 +109,11 @@ export default function Banner() {
             <div className="col-12 col-lg-6 order-1 order-lg-2">
               <div className="vl-visual vl-pop" aria-hidden="true">
                 <span className="vl-ring" />
-                <span className="vl-device">{slide.icon}</span>
+                {slide.url ? (
+                  <img src={slide.url} alt="" className="vl-photo" />
+                ) : (
+                  <span className="vl-device">{slide.icon}</span>
+                )}
 
                 <div className="vl-chip vl-chip--a">
                   <strong>{slide.chips[0].value}</strong>

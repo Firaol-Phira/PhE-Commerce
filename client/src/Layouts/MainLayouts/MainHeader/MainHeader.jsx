@@ -76,7 +76,7 @@ function MainHeader({ cartCount = 0 }) {
             </Link>
             <button
               type="button"
-              className="mh-icon-btn d-g-none"
+              className="mh-icon-btn d-lg-none"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               aria-controls="mh-menu"
