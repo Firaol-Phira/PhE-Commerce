@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Banner.css";
 import img1 from "../../assets/img1.png";
+import img2 from "../../assets/img2-2.png";
+
 const slides = [
   {
     id: "phones",
@@ -25,7 +27,7 @@ const slides = [
     text: "Fast processors, all-day battery and a two-year warranty on every model.",
     cta: { label: "Shop laptops", to: "/category/laptops" },
     ghost: { label: "View all deals", to: "/deals" },
-    icon: "💻",
+   url:img2,
     chips: [
       { value: "16 GB", label: "memory" },
       { value: "12 hrs", label: "battery" },
@@ -40,6 +42,7 @@ const slides = [
     cta: { label: "Shop audio", to: "/category/audio" },
     ghost: { label: "See new arrivals", to: "/products" },
     icon: "🎧",
+  
     chips: [
       { value: "40 hrs", label: "playback" },
       { value: "ANC", label: "noise cancelling" },
@@ -48,7 +51,7 @@ const slides = [
   
 ];
 
-export default function Banner() {
+ function Banner() {
   const [index, setIndex] = useState(0);
   const total = slides.length;
   const slide = slides[index];
@@ -177,3 +180,5 @@ export default function Banner() {
     </section>
   );
 }
+
+export default Banner;

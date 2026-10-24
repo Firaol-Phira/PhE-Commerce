@@ -1,0 +1,128 @@
+.cat {
+  --ct-primary: #1d4ed8;
+  --ct-primary-hover: #1e40af;
+  --ct-bg: #f8fafc;
+  --ct-surface: #ffffff;
+  --ct-heading: #111827;
+  --ct-body: #475569;
+  --ct-muted: #64748b;
+  --ct-border: #e2e8f0;
+  --ct-info-bg: #eff6ff;
+
+  background: var(--ct-bg);
+}
+
+/* ---------- Heading row ---------- */
+.cat-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ct-heading);
+}
+.cat-subtitle {
+  color: var(--ct-muted);
+}
+.cat-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--ct-primary);
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.cat-all:hover {
+  color: var(--ct-primary-hover);
+  gap: 0.7rem;
+}
+
+/* ---------- Entrance animation ----------
+   The column wrapper animates, so the card inside can still use its own hover transform. */
+.cat-col {
+  animation: cat-rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+/* ---------- Tile ---------- */
+.cat-card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.6rem 1rem 1.4rem;
+  background: var(--ct-surface);
+  border: 1px solid var(--ct-border);
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.cat-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--ct-primary);
+  box-shadow: 0 16px 30px rgba(29, 78, 216, 0.14);
+}
+
+/* Icon circle */
+.cat-icon {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--ct-info-bg);
+  color: var(--ct-primary);
+  font-size: 2rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.cat-card:hover .cat-icon {
+  background: var(--ct-primary);
+  color: #fff;
+  transform: scale(1.08) rotate(-6deg);
+}
+.cat-img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* Text */
+.cat-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ct-heading);
+}
+.cat-count {
+  font-size: 0.88rem;
+  color: var(--ct-muted);
+}
+
+/* Little arrow that slides in on hover */
+.cat-arrow {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: var(--ct-primary);
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translate(-6px, 6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.cat-card:hover .cat-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.cat a:focus-visible {
+  outline: 3px solid var(--ct-primary);
+  outline-offset: 3px;
+}
+
+@keyframes cat-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

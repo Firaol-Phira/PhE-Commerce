@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Show.css";
 import imgs1 from "../../assets/img1.png";
+import imgs2 from "../../assets/img2.png";
 
 // Sample data. Replace with products from your API later.
 // Use `image: "/img/phone.png"` to show a real picture instead of the emoji.
@@ -11,7 +12,7 @@ const SAMPLE_PRODUCTS = [
     name: "NexGeda Phone",
     category: "Smartphones",
     icon: "📱",
-    image:imgs1,
+    image: imgs1,
     price: 699,
     oldPrice: 799,
     rating: 4.7,
@@ -22,6 +23,7 @@ const SAMPLE_PRODUCTS = [
     id: 2,
     name: "Laptop",
     category: "Laptops",
+    image: imgs2,
     icon: "💻",
     price: 949,
     oldPrice: 1099,
